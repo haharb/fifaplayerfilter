@@ -29,8 +29,7 @@ for player in players:
         position = player[playersHeader.index("Positions")]
         result = [playerName, teamName, position]
         found.append(result)
-for one in found:
-    
+
 print(found)
 #print(playersHeader)
 
