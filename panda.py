@@ -1,22 +1,38 @@
 import csv
 filePlayers = open('players_fifa23.csv', encoding = 'utf8')
-fileTeams = open('players_fifa23.csv', encoding = 'utf8')
-csvreader = csv.reader(filePlayers)
+fileTeams = open('teams_fifa23.csv', encoding = 'utf8')
+csvreaderp = csv.reader(filePlayers)
+csvreadert = csv.reader(fileTeams)
 playersHeader = []
 teamsHeader = []
-playersHeader = next(csvreader)
-
+playersHeader = next(csvreaderp)
+playersHeader.append("League")
 players = []
-teamRows = []
-for row in csvreader:
-    players.append(row)
+teams = []
+for rowp in csvreaderp:
+    players.append(rowp)
 csvreader = csv.reader(fileTeams)
-teamsHeader = next(csvreader)
-for row in csvreader:
-    teamRows.append(row)
-#for player in playerRows:
-#    if player[playersHeader.index("Nationality")] == "Germany" and ("ST" in player[playersHeader.index("Position")]
-print(players[0][players])
+teamsHeader = next(csvreadert)
+for rowt in csvreadert:
+    teams.append(rowt)
+teams[teamsHeader.index("Name")]
+for team in teams:
+    for player in players:
+        league = player[playersHeader.index("Club")]
+        player.append()
+found = []
+print(playersHeader)
+for player in players:
+    if player[playersHeader.index("Nationality")] == "Spain" and ("ST" in player[playersHeader.index("Positions")]):
+        teamName = player[playersHeader.index("Club")]
+        playerName = player[playersHeader.index("FullName")]
+        position = player[playersHeader.index("Positions")]
+        result = [playerName, teamName, position]
+        found.append(result)
+for one in found:
+    
+print(found)
+#print(playersHeader)
 
 
 
